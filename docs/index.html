@@ -205,12 +205,12 @@
         }
         
         ::-webkit-scrollbar-thumb {
-            background: #3b82f6;
+            background: #E07A5F;
             border-radius: 4px;
         }
         
         ::-webkit-scrollbar-thumb:hover {
-            background: #2563eb;
+            background: #E07A5F;
         }
     </style>
 </head>
@@ -223,13 +223,19 @@
                     <span class="text-xl font-bold text-blue-600">Alejandro T. E.</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
-                    <a href="#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
-                    <a href="#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
-                    <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
-                    <a href="#cv" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">CV</a>
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition" data-en="Home" data-es="Inicio">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition" data-en="About" data-es="Sobre mí">About</a>
+                    <a href="#experience" class="text-gray-700 hover:text-blue-600 transition" data-en="Experience" data-es="Experiencia">Experience</a>
+                    <a href="#skills" class="text-gray-700 hover:text-blue-600 transition" data-en="Skills" data-es="Habilidades">Skills</a>
+                    <a href="#projects" class="text-gray-700 hover:text-blue-600 transition" data-en="Projects" data-es="Proyectos">Projects</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition" data-en="Contact" data-es="Contacto">Contact</a>
+                    <a href="#cv" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition" data-en="CV" data-es="CV">CV</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <button id="language-toggle" class="flex items-center space-x-2 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-md transition">
+                        <i class="fas fa-globe text-gray-600"></i>
+                        <span id="current-lang" class="text-sm font-medium">EN</span>
+                    </button>
                 </div>
                 <div class="md:hidden flex items-center">
                     <button id="menu-btn" class="text-gray-700">
@@ -243,13 +249,19 @@
         <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Home</a>
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">About</a>
-                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Experience</a>
-                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Skills</a>
-                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Projects</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Contact</a>
-                <a href="#cv" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700">CV</a>
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50" data-en="Home" data-es="Inicio">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50" data-en="About" data-es="Sobre mí">About</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50" data-en="Experience" data-es="Experiencia">Experience</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50" data-en="Skills" data-es="Habilidades">Skills</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50" data-en="Projects" data-es="Proyectos">Projects</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50" data-en="Contact" data-es="Contacto">Contact</a>
+                <a href="#cv" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700" data-en="CV" data-es="CV">CV</a>
+                <div class="flex items-center justify-center pt-2">
+                    <button id="mobile-language-toggle" class="flex items-center space-x-2 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-md transition">
+                        <i class="fas fa-globe text-gray-600"></i>
+                        <span id="mobile-current-lang" class="text-sm font-medium">EN</span>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
@@ -260,8 +272,8 @@
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
                     <h1 class="text-4xl md:text-5xl font-bold mb-4">Alejandro Theodosio Esmorís</h1>
-                    <h2 class="text-2xl md:text-3xl font-semibold text-blue-600 mb-6">Architecture Student</h2>
-                    <p class="text-lg text-gray-600 mb-8">Architecture student at University of A Coruña. Passionate about efficient designs, working culture and maintaining a positive attitude.</p>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-blue-600 mb-6" data-en="Architecture Student" data-es="Estudiante de Arquitectura">Architecture Student</h2>
+                    <p class="text-lg text-gray-600 mb-8" data-en="Architecture student at University of A Coruña. Passionate about efficient designs, working culture and maintaining a positive attitude." data-es="Estudiante de arquitectura en la Universidad de A Coruña. Apasionado por diseños eficientes, cultura de trabajo y mantener una actitud positiva.">Architecture student at University of A Coruña. Passionate about efficient designs, working culture and maintaining a positive attitude.</p>
                     <div class="flex space-x-4">
                         <a href="https://www.linkedin.com/in/alejandro-theodosio-esmoris/" target="_blank" class="text-blue-600 hover:text-blue-800 text-2xl">
                             <i class="fab fa-linkedin"></i>
@@ -280,48 +292,48 @@
     <!-- About Section -->
     <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div class="max-w-7xl mx-auto section">
-            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+            <h2 class="text-3xl font-bold text-center mb-12" data-en="About Me" data-es="Sobre mí">About Me</h2>
             <div class="flex flex-col md:flex-row">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-600">Who I Am</h3>
-                    <p class="text-gray-600 mb-6">I'm Alejandro Theodosio Esmorís, an architecture student from A Coruña, Spain, currently in my 5th year at the University of A Coruña. My journey in architecture is driven by a passion for creating spaces that are not only aesthetically pleasing but also highly functional and efficient.</p>
-                    <p class="text-gray-600 mb-6">I believe in the power of design to improve people's lives and the importance of sustainable practices in modern architecture. My approach combines technical skills with creative thinking to develop innovative solutions.</p>
-                    <p class="text-gray-600">When I'm not studying or working on projects, you can find me exploring new architectural styles, sketching urban landscapes, or enjoying the beautiful Galician coastline that inspires much of my work.</p>
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-600" data-en="Who I Am" data-es="Quién soy">Who I Am</h3>
+                    <p class="text-gray-600 mb-6" data-en="I'm Alejandro Theodosio Esmorís, an architecture student from A Coruña, Spain, currently in my 5th year at the University of A Coruña. My journey in architecture is driven by a passion for creating spaces that are not only aesthetically pleasing but also highly functional and efficient." data-es="Soy Alejandro Theodosio Esmorís, estudiante de arquitectura de A Coruña, España, actualmente en mi 5º año en la Universidad de A Coruña. Mi trayectoria en arquitectura está impulsada por la pasión por crear espacios que no solo sean estéticamente agradables sino también altamente funcionales y eficientes.">I'm Alejandro Theodosio Esmorís, an architecture student from A Coruña, Spain, currently in my 5th year at the University of A Coruña. My journey in architecture is driven by a passion for creating spaces that are not only aesthetically pleasing but also highly functional and efficient.</p>
+                    <p class="text-gray-600 mb-6" data-en="I believe in the power of design to improve people's lives and the importance of sustainable practices in modern architecture. My approach combines technical skills with creative thinking to develop innovative solutions." data-es="Creo en el poder del diseño para mejorar la vida de las personas y la importancia de las prácticas sostenibles en la arquitectura moderna. Mi enfoque combina habilidades técnicas con pensamiento creativo para desarrollar soluciones innovadoras.">I believe in the power of design to improve people's lives and the importance of sustainable practices in modern architecture. My approach combines technical skills with creative thinking to develop innovative solutions.</p>
+                    <p class="text-gray-600" data-en="When I'm not studying or working on projects, you can find me exploring new architectural styles, sketching urban landscapes, or enjoying the beautiful Galician coastline that inspires much of my work." data-es="Cuando no estoy estudiando o trabajando en proyectos, puedes encontrarme explorando nuevos estilos arquitectónicos, dibujando paisajes urbanos, o disfrutando de la hermosa costa gallega que inspira gran parte de mi trabajo.">When I'm not studying or working on projects, you can find me exploring new architectural styles, sketching urban landscapes, or enjoying the beautiful Galician coastline that inspires much of my work.</p>
                 </div>
                 <div class="md:w-1/2">
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-600">My Motivation</h3>
-                    <p class="text-gray-600 mb-6">What motivates me most is the challenge of balancing form and function. I'm particularly interested in how architecture can respond to environmental concerns while meeting human needs.</p>
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-600" data-en="My Motivation" data-es="Mi motivación">My Motivation</h3>
+                    <p class="text-gray-600 mb-6" data-en="What motivates me most is the challenge of balancing form and function. I'm particularly interested in how architecture can respond to environmental concerns while meeting human needs." data-es="Lo que más me motiva es el desafío de equilibrar forma y función. Me interesa especialmente cómo la arquitectura puede responder a las preocupaciones ambientales mientras satisface las necesidades humanas.">What motivates me most is the challenge of balancing form and function. I'm particularly interested in how architecture can respond to environmental concerns while meeting human needs.</p>
                     
-                    <h4 class="text-xl font-semibold mb-3 text-gray-800">Interests:</h4>
+                    <h4 class="text-xl font-semibold mb-3 text-gray-800" data-en="Interests:" data-es="Intereses:">Interests:</h4>
                     <ul class="grid grid-cols-2 gap-3 mb-6">
                         <li class="flex items-center">
                             <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                            Sustainable Design
+                            <span data-en="Sustainable Design" data-es="Diseño Sostenible">Sustainable Design</span>
                         </li>
                         <li class="flex items-center">
                             <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                            Urban Planning
+                            <span data-en="Urban Planning" data-es="Planificación Urbana">Urban Planning</span>
                         </li>
                         <li class="flex items-center">
                             <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                            Architectural History
+                            <span data-en="Architectural History" data-es="Historia de la Arquitectura">Architectural History</span>
                         </li>
                         <li class="flex items-center">
                             <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                            Digital Visualization
+                            <span data-en="Digital Visualization" data-es="Visualización Digital">Digital Visualization</span>
                         </li>
                         <li class="flex items-center">
                             <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                            Efficient Space Utilization
+                            <span data-en="Efficient Space Utilization" data-es="Utilización Eficiente del Espacio">Efficient Space Utilization</span>
                         </li>
                         <li class="flex items-center">
                             <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                            Cultural Heritage
+                            <span data-en="Cultural Heritage" data-es="Patrimonio Cultural">Cultural Heritage</span>
                         </li>
                     </ul>
                     
-                    <h4 class="text-xl font-semibold mb-3 text-gray-800">Future Goals:</h4>
-                    <p class="text-gray-600">I aspire to contribute to architectural projects that make a positive impact on communities while respecting environmental constraints. My goal is to develop expertise in sustainable urban development and innovative housing solutions.</p>
+                    <h4 class="text-xl font-semibold mb-3 text-gray-800" data-en="Future Goals:" data-es="Objetivos futuros:">Future Goals:</h4>
+                    <p class="text-gray-600" data-en="I aspire to contribute to architectural projects that make a positive impact on communities while respecting environmental constraints. My goal is to develop expertise in sustainable urban development and innovative housing solutions." data-es="Aspiro a contribuir a proyectos arquitectónicos que tengan un impacto positivo en las comunidades mientras respetan las limitaciones ambientales. Mi objetivo es desarrollar experiencia en desarrollo urbano sostenible y soluciones habitacionales innovadoras.">I aspire to contribute to architectural projects that make a positive impact on communities while respecting environmental constraints. My goal is to develop expertise in sustainable urban development and innovative housing solutions.</p>
                 </div>
             </div>
         </div>
@@ -330,7 +342,7 @@
     <!-- Experience Section -->
     <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div class="max-w-7xl mx-auto section">
-            <h2 class="text-3xl font-bold text-center mb-12">Experience</h2>
+            <h2 class="text-3xl font-bold text-center mb-12" data-en="Experience" data-es="Experiencia">Experience</h2>
             <div class="bg-white rounded-lg shadow-md p-8 max-w-3xl mx-auto">
                 <div class="flex items-start mb-8">
                     <div class="bg-blue-100 p-3 rounded-full mr-6">
@@ -338,8 +350,8 @@
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-1">University of A Coruña</h3>
-                        <p class="text-gray-600 mb-2">Architecture Student (2021 - Present)</p>
-                        <p class="text-gray-700">Currently in my 5th year of the Architecture degree program. Gained comprehensive knowledge in architectural design, construction technologies, urban planning, and architectural history.</p>
+                        <p class="text-gray-600 mb-2" data-en="Architecture Student (2021 - Present)" data-es="Estudiante de Arquitectura (2021 - Presente)">Architecture Student (2021 - Present)</p>
+                        <p class="text-gray-700" data-en="Currently in my 5th year of the Architecture degree program. Gained comprehensive knowledge in architectural design, construction technologies, urban planning, and architectural history." data-es="Actualmente en mi 5º año del programa de grado en Arquitectura. Adquirí conocimientos integrales en diseño arquitectónico, tecnologías de construcción, planificación urbana e historia de la arquitectura.">Currently in my 5th year of the Architecture degree program. Gained comprehensive knowledge in architectural design, construction technologies, urban planning, and architectural history.</p>
                     </div>
                 </div>
 
@@ -349,8 +361,8 @@
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-1">Akademia Techniczno-Artystyczna</h3>
-                        <p class="text-gray-600 mb-2">ERASMUS Student (2024 - 2025)</p>
-                        <p class="text-gray-700">Completed one year of architecture studies in Warsaw, Poland, where I expanded my knowledge through exposure to innovative design techniques and a diverse range of cultural perspectives.</p>
+                        <p class="text-gray-600 mb-2" data-en="ERASMUS Student (2024 - 2025)" data-es="Estudiante ERASMUS (2024 - 2025)">ERASMUS Student (2024 - 2025)</p>
+                        <p class="text-gray-700" data-en="Completed one year of architecture studies in Warsaw, Poland, where I expanded my knowledge through exposure to innovative design techniques and a diverse range of cultural perspectives." data-es="Completé un año de estudios de arquitectura en Varsovia, Polonia, donde amplié mis conocimientos a través de la exposición a técnicas de diseño innovadoras y una amplia gama de perspectivas culturales.">Completed one year of architecture studies in Warsaw, Poland, where I expanded my knowledge through exposure to innovative design techniques and a diverse range of cultural perspectives.</p>
                     </div>
                 </div>
                 
@@ -359,9 +371,9 @@
                         <i class="fas fa-drafting-compass text-blue-600 text-xl"></i>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-1">Academic Projects</h3>
-                        <p class="text-gray-600 mb-2">Various Projects (2021 - Present)</p>
-                        <p class="text-gray-700">Completed numerous design projects including residential buildings, public spaces, and urban interventions. Developed skills in conceptualization, technical drawing, 3D modeling, and presentation techniques.</p>
+                        <h3 class="text-xl font-semibold mb-1" data-en="Academic Projects" data-es="Proyectos Académicos">Academic Projects</h3>
+                        <p class="text-gray-600 mb-2" data-en="Various Projects (2021 - Present)" data-es="Varios Proyectos (2021 - Presente)">Various Projects (2021 - Present)</p>
+                        <p class="text-gray-700" data-en="Completed numerous design projects including residential buildings, public spaces, and urban interventions. Developed skills in conceptualization, technical drawing, 3D modeling, and presentation techniques." data-es="Completé numerosos proyectos de diseño incluyendo edificios residenciales, espacios públicos e intervenciones urbanas. Desarrollé habilidades en conceptualización, dibujo técnico, modelado 3D y técnicas de presentación.">Completed numerous design projects including residential buildings, public spaces, and urban interventions. Developed skills in conceptualization, technical drawing, 3D modeling, and presentation techniques.</p>
                     </div>
                 </div>
                 
@@ -370,9 +382,9 @@
                         <i class="fas fa-users text-blue-600 text-xl"></i>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-1">Collaborative Work</h3>
-                        <p class="text-gray-600 mb-2">Team Projects (2021 - Present)</p>
-                        <p class="text-gray-700">Participated in several group projects that involved coordinating with peers, dividing tasks, and integrating different design approaches into cohesive solutions. These experiences enhanced my teamwork and communication skills.</p>
+                        <h3 class="text-xl font-semibold mb-1" data-en="Collaborative Work" data-es="Trabajo Colaborativo">Collaborative Work</h3>
+                        <p class="text-gray-600 mb-2" data-en="Team Projects (2021 - Present)" data-es="Proyectos en Equipo (2021 - Presente)">Team Projects (2021 - Present)</p>
+                        <p class="text-gray-700" data-en="Participated in several group projects that involved coordinating with peers, dividing tasks, and integrating different design approaches into cohesive solutions. These experiences enhanced my teamwork and communication skills." data-es="Participé en varios proyectos grupales que involucraron coordinación con compañeros, división de tareas e integración de diferentes enfoques de diseño en soluciones cohesivas. Estas experiencias mejoraron mis habilidades de trabajo en equipo y comunicación.">Participated in several group projects that involved coordinating with peers, dividing tasks, and integrating different design approaches into cohesive solutions. These experiences enhanced my teamwork and communication skills.</p>
                     </div>
                 </div>
             </div>
@@ -382,7 +394,7 @@
     <!-- Skills Section -->
     <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div class="max-w-7xl mx-auto section">
-            <h2 class="text-3xl font-bold text-center mb-12">Skills</h2>
+            <h2 class="text-3xl font-bold text-center mb-12" data-en="Skills" data-es="Habilidades">Skills</h2>
             
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Technical Skills -->
@@ -391,7 +403,7 @@
                         <div class="bg-blue-600 p-2 rounded-md mr-4">
                             <i class="fas fa-laptop-code text-white"></i>
                         </div>
-                        <h3 class="text-xl font-semibold">Technical Skills</h3>
+                        <h3 class="text-xl font-semibold" data-en="Technical Skills" data-es="Habilidades Técnicas">Technical Skills</h3>
                     </div>
                     <ul class="space-y-4">
                         <li>
@@ -475,48 +487,48 @@
                         <div class="bg-blue-600 p-2 rounded-md mr-4">
                             <i class="fas fa-brain text-white"></i>
                         </div>
-                        <h3 class="text-xl font-semibold">Soft Skills</h3>
+                        <h3 class="text-xl font-semibold" data-en="Soft Skills" data-es="Habilidades Blandas">Soft Skills</h3>
                     </div>
                     <ul class="space-y-3">
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
-                            <span>Creative Problem Solving</span>
+                            <span data-en="Creative Problem Solving" data-es="Resolución Creativa de Problemas">Creative Problem Solving</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
-                            <span>Team Collaboration</span>
+                            <span data-en="Team Collaboration" data-es="Colaboración en Equipo">Team Collaboration</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
-                            <span>Time Management</span>
+                            <span data-en="Time Management" data-es="Gestión del Tiempo">Time Management</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
-                            <span>Attention to Detail</span>
+                            <span data-en="Attention to Detail" data-es="Atención al Detalle">Attention to Detail</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
-                            <span>Adaptability</span>
+                            <span data-en="Adaptability" data-es="Adaptabilidad">Adaptability</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
-                            <span>Critical Thinking</span>
+                            <span data-en="Critical Thinking" data-es="Pensamiento Crítico">Critical Thinking</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
-                            <span>Communication</span>
+                            <span data-en="Communication" data-es="Comunicación">Communication</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
-                            <span>Positive Attitude</span>
+                            <span data-en="Positive Attitude" data-es="Actitud Positiva">Positive Attitude</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
-                            <span>Presentation Skills</span>
+                            <span data-en="Presentation Skills" data-es="Habilidades de Presentación">Presentation Skills</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
-                            <span>Work Ethic</span>
+                            <span data-en="Work Ethic" data-es="Ética de Trabajo">Work Ethic</span>
                         </li>
                     </ul>
                 </div>
@@ -527,7 +539,7 @@
                         <div class="bg-blue-600 p-2 rounded-md mr-4">
                             <i class="fas fa-language text-white"></i>
                         </div>
-                        <h3 class="text-xl font-semibold">Language Skills</h3>
+                        <h3 class="text-xl font-semibold" data-en="Language Skills" data-es="Habilidades Lingüísticas">Language Skills</h3>
                     </div>
                     <ul class="space-y-4">
                         <li>
@@ -575,7 +587,7 @@
     <!-- Projects Section -->
     <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
     <div class="max-w-7xl mx-auto section">
-        <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
+        <h2 class="text-3xl font-bold text-center mb-12" data-en="Projects" data-es="Proyectos">Projects</h2>
         
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Project 1 -->
@@ -584,9 +596,9 @@
                     <img src="public/zamora.jpg" alt="Library in Zamora" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Library in Zamora</h3>
-                    <p class="text-gray-600 mb-4">Rehabilitation and integration of a library into a park in Zamora, Spain.</p>
-                    <a href="public/library.pdf" download class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">Download Project</a>
+                    <h3 class="text-xl font-semibold mb-2" data-en="Library in Zamora" data-es="Biblioteca en Zamora">Library in Zamora</h3>
+                    <p class="text-gray-600 mb-4" data-en="Rehabilitation and integration of a library into a park in Zamora, Spain." data-es="Rehabilitación e integración de una biblioteca en un parque en Zamora, España.">Rehabilitation and integration of a library into a park in Zamora, Spain.</p>
+                    <a href="public/library.pdf" download class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition" data-en="Download Project" data-es="Descargar Proyecto">Download Project</a>
                 </div>
             </div>
 
@@ -596,9 +608,9 @@
                     <img src="public/koechlin.png" alt="Koechlin House" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Koechlin House</h3>
-                    <p class="text-gray-600 mb-4">Construction and detail analysis of a house in Switzerland.</p>
-                    <a href="public/koechlin-house.pdf" download class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">Download Project</a>
+                    <h3 class="text-xl font-semibold mb-2" data-en="Koechlin House" data-es="Casa Koechlin">Koechlin House</h3>
+                    <p class="text-gray-600 mb-4" data-en="Construction and detail analysis of a house in Switzerland." data-es="Análisis de construcción y detalles de una casa en Suiza.">Construction and detail analysis of a house in Switzerland.</p>
+                    <a href="public/koechlin-house.pdf" download class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition" data-en="Download Project" data-es="Descargar Proyecto">Download Project</a>
                 </div>
             </div>
 
@@ -608,9 +620,9 @@
                     <img src="public/office.png" alt="Office Building" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Office Building</h3>
-                    <p class="text-gray-600 mb-4">Design of a four-story semi-public building in Warsaw.</p>
-                    <a href="public/office-building.pdf" download class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">Download Project</a>
+                    <h3 class="text-xl font-semibold mb-2" data-en="Office Building" data-es="Edificio de Oficinas">Office Building</h3>
+                    <p class="text-gray-600 mb-4" data-en="Design of a four-story semi-public building in Warsaw." data-es="Diseño de un edificio semipúblico de cuatro plantas en Varsovia.">Design of a four-story semi-public building in Warsaw.</p>
+                    <a href="public/office-building.pdf" download class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition" data-en="Download Project" data-es="Descargar Proyecto">Download Project</a>
                 </div>
             </div>
 
@@ -622,14 +634,14 @@
     <!-- Contact Section -->
     <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div class="max-w-3xl mx-auto section text-center">
-            <h2 class="text-3xl font-bold mb-6">Let's Connect</h2>
+            <h2 class="text-3xl font-bold mb-6" data-en="Let's Connect" data-es="Conectemos">Let's Connect</h2>
             <div class="bg-gray-50 p-8 rounded-xl shadow-sm transform transition-all hover:scale-[1.02] hover:shadow-md">
-                <h3 class="text-xl font-semibold mb-4 text-blue-600">Currently Available For:</h3>
+                <h3 class="text-xl font-semibold mb-4 text-blue-600" data-en="Currently Available For:" data-es="Actualmente Disponible Para:">Currently Available For:</h3>
                 <div class="flex flex-wrap justify-center gap-3 mb-6">
-                    <span class="bg-orange-300 text-white-100 px-3 py-1 rounded-full text-sm">Internships</span>
-                    <span class="bg-orange-300 text-white-100 px-3 py-1 rounded-full text-sm">Academic Collaborations</span>
-                    <span class="bg-orange-300 text-white-100 px-3 py-1 rounded-full text-sm">Architecture Projects</span>
-                    <span class="bg-orange-300 text-white-100 px-3 py-1 rounded-full text-sm">Design Consultations</span>
+                    <span class="bg-orange-300 text-white-100 px-3 py-1 rounded-full text-sm" data-en="Internships" data-es="Prácticas">Internships</span>
+                    <span class="bg-orange-300 text-white-100 px-3 py-1 rounded-full text-sm" data-en="Academic Collaborations" data-es="Colaboraciones Académicas">Academic Collaborations</span>
+                    <span class="bg-orange-300 text-white-100 px-3 py-1 rounded-full text-sm" data-en="Architecture Projects" data-es="Proyectos de Arquitectura">Architecture Projects</span>
+                    <span class="bg-orange-300 text-white-100 px-3 py-1 rounded-full text-sm" data-en="Design Consultations" data-es="Consultorías de Diseño">Design Consultations</span>
                 </div>
                 
                 <div class="space-y-4 max-w-md mx-auto">
@@ -644,7 +656,7 @@
                 </div>
                 
                 <div class="mt-8">
-                    <h4 class="text-lg font-medium mb-4">Connect with me:</h4>
+                    <h4 class="text-lg font-medium mb-4" data-en="Connect with me:" data-es="Conéctate conmigo:">Connect with me:</h4>
                     <div class="flex justify-center space-x-6">
                         <a href="https://www.linkedin.com/in/alejandro-theodosio-esmoris/" target="_blank" 
                            class="text-blue-600 hover:text-blue-800 text-3xl transform hover:scale-110 transition-transform">
@@ -659,10 +671,10 @@
     <!-- CV Section -->
     <section id="cv" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div class="max-w-7xl mx-auto section text-center">
-            <h2 class="text-3xl font-bold mb-6">Download My CV</h2>
-            <p class="text-gray-600 mb-8 max-w-2xl mx-auto">For a comprehensive overview of my academic background, skills, and achievements, please download my full curriculum vitae.</p>
+            <h2 class="text-3xl font-bold mb-6" data-en="Download My CV" data-es="Descarga Mi CV">Download My CV</h2>
+            <p class="text-gray-600 mb-8 max-w-2xl mx-auto" data-en="For a comprehensive overview of my academic background, skills, and achievements, please download my full curriculum vitae." data-es="Para una visión integral de mi formación académica, habilidades y logros, por favor descarga mi currículum vitae completo.">For a comprehensive overview of my academic background, skills, and achievements, please download my full curriculum vitae.</p>
             <a href="/cv.pdf" download class="inline-block bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition text-lg font-medium">
-                <i class="fas fa-download mr-2"></i> Download CV
+                <i class="fas fa-download mr-2"></i> <span data-en="Download CV" data-es="Descargar CV">Download CV</span>
             </a>
         </div>
     </section>
@@ -673,7 +685,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">
                     <span class="text-xl font-bold">Alejandro Theodosio Esmorís</span>
-                    <p class="text-gray-400 mt-1">Architecture Student</p>
+                    <p class="text-gray-400 mt-1" data-en="Architecture Student" data-es="Estudiante de Arquitectura">Architecture Student</p>
                 </div>
                 <div class="flex space-x-6">
                     <a href="https://www.linkedin.com/in/alejandro-theodosio-esmoris/" target="_blank" class="text-gray-400 hover:text-white transition">
@@ -682,22 +694,65 @@
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 Alejandro Theodosio Esmorís. All rights reserved.</p>
+                <p data-en="&copy; 2025 Alejandro Theodosio Esmorís. All rights reserved." data-es="&copy; 2025 Alejandro Theodosio Esmorís. Todos los derechos reservados.">&copy; 2025 Alejandro Theodosio Esmorís. All rights reserved.</p>
             </div>
         </div>
         <div class="text-center mt-6">
             <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
                     class="bg-accent text-white px-4 py-2 rounded-full hover:bg-red-700 transition">
-                <i class="fas fa-arrow-up mr-2"></i>Back to Top
+                <i class="fas fa-arrow-up mr-2"></i><span data-en="Back to Top" data-es="Volver Arriba">Back to Top</span>
             </button>
         </div>
     </footer>
 
     <script>
+        // Language management
+        let currentLanguage = localStorage.getItem('language') || 'en';
+        
+        // Language toggle functionality
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'es' : 'en';
+            localStorage.setItem('language', currentLanguage);
+            updateLanguage();
+        }
+        
+        function updateLanguage() {
+            const elements = document.querySelectorAll('[data-en][data-es]');
+            const currentLangSpan = document.getElementById('current-lang');
+            const mobileCurrentLangSpan = document.getElementById('mobile-current-lang');
+            
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${currentLanguage}`);
+                if (text) {
+                    element.textContent = text;
+                }
+            });
+            
+            // Update language indicator
+            if (currentLangSpan) {
+                currentLangSpan.textContent = currentLanguage.toUpperCase();
+            }
+            if (mobileCurrentLangSpan) {
+                mobileCurrentLangSpan.textContent = currentLanguage.toUpperCase();
+            }
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = currentLanguage;
+        }
+        
+        // Initialize language on page load
+        function initLanguage() {
+            updateLanguage();
+        }
+        
         // Mobile menu toggle
         document.getElementById('menu-btn').addEventListener('click', function() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
+        
+        // Language toggle buttons
+        document.getElementById('language-toggle').addEventListener('click', toggleLanguage);
+        document.getElementById('mobile-language-toggle').addEventListener('click', toggleLanguage);
         
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -799,6 +854,7 @@
         
         // Run on load and scroll
         window.addEventListener('load', function() {
+            initLanguage();
             checkScroll();
             initSkillBars();
         });
